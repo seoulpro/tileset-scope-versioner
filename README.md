@@ -1,5 +1,7 @@
 # tileset-scope-versioner
 
+[![npm](https://img.shields.io/npm/v/tileset-scope-versioner.svg)](https://www.npmjs.com/package/tileset-scope-versioner)
+
 Content-addressed, scope-local cache versions for external 3D Tiles trees.
 
 A single deployment-wide cache token is easy to implement, but changing one
