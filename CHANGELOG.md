@@ -4,6 +4,16 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the project aims
 to follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 0.1.1 - 2026-07-28
+
+Metadata-only republish. No source, API, dependency, or behavior changes; the
+installed code is identical to `0.1.0`.
+
+### Changed
+
+- Corrected the published package metadata so the release no longer carries
+  build-origin fields from the initial publish.
+
 ## 0.1.0 - 2026-07-28
 
 Initial release.
