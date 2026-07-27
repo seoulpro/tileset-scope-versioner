@@ -1,0 +1,30 @@
+name: Feature request
+description: Propose a new discovery, scope, sidecar, URL, or CLI capability.
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Sidecar schemas, fingerprint rules, selector precedence, and CLI flags
+        are compatibility-sensitive. Please discuss them before implementation.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: The deployment or asset-versioning case the current API cannot express.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      description: Describe the API, sidecar, or CLI behavior and its compatibility impact.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Existing options or deployment-adapter workarounds you considered.
+    validations:
+      required: false
