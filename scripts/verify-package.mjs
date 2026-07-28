@@ -67,6 +67,14 @@ try {
     "SECURITY.md",
     "bin/tileset-scope-version.js",
     "docs/API.md",
+    "examples/scoped-tileset/data/north/model.glb",
+    "examples/scoped-tileset/data/north/tileset.json",
+    "examples/scoped-tileset/data/south/model.glb",
+    "examples/scoped-tileset/data/south/tileset.json",
+    "examples/scoped-tileset/data/tileset.json",
+    "examples/scoped-tileset/README.md",
+    "examples/scoped-tileset/demo.mjs",
+    "examples/scoped-tileset/generate-models.mjs",
     "package.json",
     "src/discover.d.ts",
     "src/discover.js",
@@ -162,6 +170,26 @@ assert.equal(
     "utf8",
   );
   run(process.execPath, ["smoke.mjs"], consumerDirectory);
+
+  const exampleOutput = JSON.parse(run(
+    process.execPath,
+    [
+      join(
+        consumerDirectory,
+        "node_modules",
+        "tileset-scope-versioner",
+        "examples",
+        "scoped-tileset",
+        "demo.mjs",
+      ),
+    ],
+    consumerDirectory,
+  ));
+  assert.deepEqual(exampleOutput.changed, {
+    root: false,
+    north: true,
+    south: false,
+  });
 
   const installedManifest = JSON.parse(await readFile(
     join(

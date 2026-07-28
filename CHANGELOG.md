@@ -4,6 +4,16 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the project aims
 to follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 0.1.2 - 2026-07-28
+
+### Added
+
+- A small, self-contained runnable example under `examples/scoped-tileset`: a
+  three-scope 3D Tiles tree, a demo that shows a north-side edit rotating only
+  the `north/` version, and a deterministic generator for its two tiny GLBs. The
+  data is authored for this repository and validates cleanly against the 3D
+  Tiles Validator.
+
 ## 0.1.1 - 2026-07-28
 
 Metadata-only republish. No source, API, dependency, or behavior changes; the

@@ -72,6 +72,17 @@ versions:
 Editing `south/model.glb` rotates only the `south/` version; the root and
 `north/` tokens are unchanged. Tokens in this example are illustrative.
 
+A runnable version of this tree ships in the package under
+`examples/scoped-tileset`. From a repository clone, run:
+
+```sh
+node examples/scoped-tileset/demo.mjs
+```
+
+It edits one external tileset in a temporary copy and prints which scopes
+changed. See [examples/scoped-tileset](./examples/scoped-tileset/README.md) for
+the full walkthrough.
+
 ## CLI
 
 ```sh
