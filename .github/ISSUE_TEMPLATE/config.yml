@@ -3,5 +3,7 @@
 blank_issues_enabled: false
 contact_links:
   - name: Security vulnerability
-    url: https://github.com/seoulpro/tileset-scope-versioner/security/advisories/new
-    about: Report vulnerabilities privately, as described in SECURITY.md.
+    url: https://github.com/seoulpro/tileset-scope-versioner/security/policy
+    about: >-
+      Do not open a public issue. Follow the private reporting instructions in
+      the security policy.

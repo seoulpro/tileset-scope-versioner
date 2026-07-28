@@ -28,12 +28,15 @@ representing the project in public.
 
 ## Reporting
 
-If you experience or witness unacceptable behavior, report it privately to the
-repository maintainer through the contact method listed on their GitHub profile.
-Please do not post sensitive conduct reports as public issues. Reports will be
-reviewed and handled discreetly.
+If you experience or witness unacceptable behavior, report it privately by
+email to [lim@limsumin.com](mailto:lim@limsumin.com). Please do not post
+sensitive conduct reports as public issues. Reports will be reviewed and
+handled discreetly.
 
 ## Attribution
 
-This Code of Conduct is adapted from the
-[Contributor Covenant](https://www.contributor-covenant.org), version 2.1.
+This Code of Conduct is a shortened, project-specific adaptation of the
+[Contributor Covenant, version 2.1](https://www.contributor-covenant.org/version/2/1/code_of_conduct.html).
+Contributor Covenant 2.1 is licensed under the
+[Creative Commons Attribution 4.0 International license](https://creativecommons.org/licenses/by/4.0/),
+and this adaptation is made available under the same license.
