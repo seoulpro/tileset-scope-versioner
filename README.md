@@ -200,6 +200,13 @@ npm run check
 See [CONTRIBUTING.md](./CONTRIBUTING.md) for filesystem test expectations and
 [SECURITY.md](./SECURITY.md) for private reporting.
 
+## Related projects
+
+- [atomic-quadtree-cut](https://github.com/seoulpro/atomic-quadtree-cut) — coherent
+  refinement of streamed quadtrees, a neighbouring consistency problem.
+- [render-handoff-contract](https://github.com/seoulpro/render-handoff-contract) —
+  continuity policies for when tile content is exchanged mid-view.
+
 ## License
 
 The package source is available under the [MIT license](./LICENSE). Tilesets
