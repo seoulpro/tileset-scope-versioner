@@ -195,7 +195,15 @@ endorsed by OGC or Cesium, and does not claim conformance certification.
 ```sh
 npm ci
 npm run check
+npm run benchmark
 ```
+
+The benchmark hashes 16, 64, and 256 MiB assets in isolated worker processes
+and reports elapsed time plus peak RSS growth. Set `ASSET_SIZES_MIB` or
+`BENCHMARK_RUNS` to change the matrix. Binary and texture assets are streamed
+through SHA-256, so their file size does not become a same-sized heap
+allocation. Tileset JSON is still parsed in memory because its generated
+version field must be removed before canonical hashing.
 
 See [CONTRIBUTING.md](./CONTRIBUTING.md) for filesystem test expectations and
 [SECURITY.md](./SECURITY.md) for private reporting.

@@ -11,6 +11,7 @@ Use Node.js 22 or newer:
 ```sh
 npm ci
 npm run check
+npm run benchmark
 ```
 
 The test suite creates disposable tileset trees in temporary directories.
