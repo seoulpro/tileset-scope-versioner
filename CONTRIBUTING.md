@@ -23,6 +23,7 @@ Filesystem changes should cover successful output and rejection paths. In
 particular, preserve these invariants:
 
 - hashes are deterministic and exclude generated version fields;
+- large non-manifest assets are hashed as streams without changing fingerprints;
 - nested external scopes do not change a parent scope's hash;
 - the longest matching URL prefix wins;
 - `--dry-run` performs no writes;

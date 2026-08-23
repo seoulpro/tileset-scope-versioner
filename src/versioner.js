@@ -1,4 +1,5 @@
 import { createHash, randomUUID } from "node:crypto";
+import { createReadStream } from "node:fs";
 import {
   lstat,
   mkdir,
@@ -98,6 +99,14 @@ const canonicalTilesetBytes = async (file) => {
   return Buffer.from(stableJson(document));
 };
 
+const hashFile = async (file) => {
+  const hash = createHash("sha256");
+  for await (const chunk of createReadStream(file)) {
+    hash.update(chunk);
+  }
+  return hash.digest("hex");
+};
+
 const shouldSkipDirectory = (relative, excludedDirectories) => (
   excludedDirectories.some((excluded) => (
     relative === excluded || relative.startsWith(`${excluded}/`)
@@ -138,10 +147,11 @@ const hashRecords = async ({ root, files, manifests = new Set() }) => {
   const scopeHash = createHash("sha256");
   for (const relative of files) {
     const absolute = path.join(root, relative);
-    const bytes = manifests.has(relative)
-      ? await canonicalTilesetBytes(absolute)
-      : await readFile(absolute);
-    const contentHash = createHash("sha256").update(bytes).digest("hex");
+    const contentHash = manifests.has(relative)
+      ? createHash("sha256")
+        .update(await canonicalTilesetBytes(absolute))
+        .digest("hex")
+      : await hashFile(absolute);
     scopeHash.update(relative);
     scopeHash.update("\0");
     scopeHash.update(contentHash);
