@@ -2,7 +2,7 @@
   "name": "tileset-scope-versioner",
   "version": "0.1.2",
   "description": "Content-addressed, scope-local cache versions for external 3D Tiles trees.",
-  "author": "seoulpro <lim@limsumin.com>",
+  "author": "Sumin Lim <lim@limsumin.com> (https://limsumin.com)",
   "license": "MIT",
   "homepage": "https://github.com/seoulpro/tileset-scope-versioner#readme",
   "repository": {
