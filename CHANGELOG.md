@@ -4,6 +4,13 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the project aims
 to follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## Unreleased
+
+### Changed
+
+- Hash non-manifest assets with bounded-memory streams while preserving the
+  existing SHA-256 fingerprints and public version tokens.
+
 ## 0.1.2 - 2026-07-28
 
 ### Added

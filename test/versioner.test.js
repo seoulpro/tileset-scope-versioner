@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { createHash } from "node:crypto";
 import {
   chmod,
   mkdtemp,
@@ -78,6 +79,31 @@ test("emits 128-bit hexadecimal version tokens", async () => {
   for (const scope of result.versionMap.scopes) {
     assert.match(scope.version, /^[a-f0-9]{32}$/);
   }
+});
+
+test("streams large asset hashes without changing fingerprint semantics", async () => {
+  const root = await createFixture();
+  const relative = "shared/large.bin";
+  const bytes = Buffer.alloc(4 * 1024 * 1024 + 17, 0xa5);
+  await writeFile(path.join(root, relative), bytes);
+
+  const result = await buildScopedVersionMap({
+    root,
+    additionalScopes: [{ id: "large-asset", path: relative }],
+  });
+  const contentHash = createHash("sha256").update(bytes).digest("hex");
+  const expected = createHash("sha256")
+    .update(relative)
+    .update("\0")
+    .update(contentHash)
+    .update("\n")
+    .digest("hex");
+
+  assert.equal(result.fingerprints["large-asset"], expected);
+  assert.equal(
+    versionsById(result)["large-asset"],
+    expected.slice(0, 32),
+  );
 });
 
 test("rotates only the changed directory scope", async () => {
