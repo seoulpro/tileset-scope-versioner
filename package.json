@@ -52,9 +52,10 @@
     "node": ">=22"
   },
   "scripts": {
+    "benchmark": "node benchmark/hash-assets.mjs",
     "test": "node --test",
     "test:coverage": "node --experimental-test-coverage --test --test-coverage-lines=95 --test-coverage-branches=90 --test-coverage-functions=98",
-    "lint": "node --check src/*.js bin/*.js test/*.js scripts/*.mjs examples/scoped-tileset/*.mjs",
+    "lint": "node --check src/*.js bin/*.js test/*.js scripts/*.mjs benchmark/*.mjs examples/scoped-tileset/*.mjs",
     "typecheck": "tsc --project tsconfig.json",
     "package:lint": "publint",
     "package:types": "node scripts/check-package-types.mjs",

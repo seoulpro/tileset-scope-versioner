@@ -11,6 +11,10 @@ to follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - Hash non-manifest assets with bounded-memory streams while preserving the
   existing SHA-256 fingerprints and public version tokens.
 
+### Added
+
+- A worker-isolated scaling benchmark for asset hashing time and peak RSS.
+
 ## 0.1.2 - 2026-07-28
 
 ### Added
