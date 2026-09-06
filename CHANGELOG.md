@@ -6,6 +6,8 @@ to follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Unreleased
 
+## 0.1.3 - 2026-09-06
+
 ### Changed
 
 - Hash non-manifest assets with bounded-memory streams while preserving the
